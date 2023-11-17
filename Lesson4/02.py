@@ -2,19 +2,15 @@ while True:
     age = input('Your age: ')
     name = input('Your name: ')
 
-    if age.lower() == 'exit':
-        print('До побачення!')
-        break
-
-    if age != 0 and age.isdigit():
-        if 0 < int(age) < 10:
-            print('Привіт, шкет', name)
-        elif 10 <= int(age) <= 18:
-            print('Як справи,', name, end='?\n')
-        elif 18 < int(age) < 100:
-            print('Що бажаєте', name, end='?\n')
+    if age.isdigit() and int(age) > 0:
+        if int(age) < 10:
+            print(f'Привіт, шкет, {name}')
+        elif int(age) <= 18:
+            print(f'Як справи, {name}', end='?\n')
+        elif int(age) < 100:
+            print(f'Що бажаєте {name}', end='?\n')
         else:
-            print(name, ', ви брешете - у наш час стільки не живуть...', sep='')
+            print(f'{name}, ви брешете - у наш час стільки не живуть...')
     else:
         print('Помилка, повторіть введення')
 
