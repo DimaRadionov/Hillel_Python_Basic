@@ -1,0 +1,15 @@
+Встановити пакети:
+pip install requests==2.26.0 lxml
+
+Записати встановлені залежності у файл requirements.txt:
+pip freeze > requirements.txt
+
+Видалити залежності по одній:
+pip uninstall requests
+pip uninstall lxml
+
+Встановити залежності з файлу requirements.txt:
+pip install -r requirements.txt
+
+Видалити всі залежності однією командою (автоматично без підтверджень):
+pip uninstall -r requirements.txt -y
