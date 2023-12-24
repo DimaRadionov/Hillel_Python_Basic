@@ -1,23 +1,5 @@
 import time
-
-
-class Auto:
-    def __init__(self, brand, age, mark, color=None, weight=None):
-        self.brand = brand
-        self.age = age
-        self.color = color
-        self.mark = mark
-        self.weight = weight
-
-    def move(self):
-        print(f"{self.brand} is moving")
-
-    def stop(self):
-        print(f"{self.brand} has stopped")
-
-    def birthday(self):
-        self.age += 1
-        print(f"Happy Birthday! {self.brand} is now {self.age} years old")
+from task1 import Auto
 
 
 class Truck(Auto):
