@@ -1,17 +1,5 @@
 from person import Person
 from database import Database
-import datetime
-
-
-def calculate_age(birth_date, death_date=None):
-    today = datetime.date.today()
-    birth_date = datetime.datetime.strptime(birth_date, "%d.%m.%Y").date()
-    if death_date:
-        death_date = datetime.datetime.strptime(death_date, "%d.%m.%Y").date()
-        age = (death_date - birth_date).days // 365
-    else:
-        age = (today - birth_date).days // 365
-    return age
 
 
 def main():
@@ -40,8 +28,7 @@ def main():
             query = input("Введіть ім'я, прізвище або по батькові для пошуку: ")
             results = db.search_person(query)
             for person in results:
-                age = calculate_age(person.birth_date, person.death_date)
-                print(f"{person.first_name} {person.last_name} {person.middle_name} {age} років, {person.gender}")
+                print(person.first_name, person.last_name, person.middle_name, person.calculate_age(), "років,", person.gender)
 
         elif choice == '3':
             filename = input("Введіть ім'я файлу для збереження: ")
